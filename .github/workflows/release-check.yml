@@ -1,0 +1,14 @@
+name: Release check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Print the changelog
+        run: cat CHANGELOG.md
